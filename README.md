@@ -10,6 +10,7 @@ npm run test
 ### How to run specific test
 
 `npm run test {year}/challenge{number}`
+
 Example `npm run test 2024/challenge1`
 
 ### Run solution of challenge
