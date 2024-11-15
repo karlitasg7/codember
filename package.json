@@ -1,0 +1,11 @@
+{
+  "name": "@karlitasg7/codember",
+  "version": "1.0.0",
+  "description": "My solutions for Codember Coding Challenges by midudev",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

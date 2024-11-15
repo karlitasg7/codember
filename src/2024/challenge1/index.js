@@ -30,7 +30,4 @@ const getNumber = (numbers, movements) => {
   return result.join("");
 };
 
-console.log(getNumber("000", "URURD")); // 119
-console.log(getNumber("1111", "UUURUUU")); // 4411
-console.log(getNumber("9999", "LULULULD")); // 8000
-console.log(getNumber("528934712834", "URDURUDRUDLLLLUUDDUDUDUDLLRRRR"));
+module.exports = { getNumber };

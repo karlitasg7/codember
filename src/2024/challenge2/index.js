@@ -1,6 +1,3 @@
-const fs = require("fs");
-const readline = require("readline");
-
 /*
 · Sólo usa letras minúsculas y dígitos.
 · Nunca usa dígitos después de una letra (Una vez aparecen letras, la contraseña debe continuar solo con letras)
@@ -30,36 +27,4 @@ const isValid = (text) => {
   return true;
 };
 
-async function readFileLineByLine(filePath) {
-  const fileStream = fs.createReadStream(filePath);
-
-  const rl = readline.createInterface({
-    input: fileStream,
-    crlfDelay: Infinity,
-  });
-
-  let lineNumber = 0;
-  let linesValid = 0;
-  let linesInvalid = 0;
-  for await (const line of rl) {
-    lineNumber++;
-    console.log(`Line ${lineNumber}: ${line} (${isValid(line)})`);
-
-    if (isValid(line)) {
-      linesValid++;
-    } else {
-      linesInvalid++;
-    }
-  }
-
-  console.log(`submit ${linesValid}true${linesInvalid}false`);
-}
-
-console.log(isValid("1234")); // true
-console.log(isValid("abc")); // true
-console.log(isValid("a123")); // false (un número después de una letra)
-console.log(isValid("123abc")); // true
-console.log(isValid("dbce")); // false (una "d" y después una "b")
-console.log(isValid("aab")); // true
-
-readFileLineByLine(__dirname + "/challenge2_input.txt");
+module.exports = { isValid };
